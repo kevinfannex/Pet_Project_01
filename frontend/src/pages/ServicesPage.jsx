@@ -242,17 +242,21 @@ function SvcCard({ s, delay, visible }) {
 /* ─── Services Page ─── */
 const ServicesPage = () => {
   const [filt, setFilt] = useState('All');
-  const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true); },
-      { threshold: 0.05 }
-    );
-    obs.observe(sectionRef.current);
-    return () => obs.disconnect();
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 150);
+    return () => clearTimeout(timer);
   }, []);
 
   const filtered = filt === 'All'
@@ -263,13 +267,13 @@ const ServicesPage = () => {
     <>
       {/* ─── Hero ─── */}
       <section
-        className="fade-up"
+        className="fade-up parallax-bg"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          padding: '120px 7% 100px',
+          padding: isMobile ? '80px 5% 60px' : '120px 7% 100px',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

@@ -1711,3 +1711,152 @@ footer .logo-dot {
     text-align: center;
   }
 }
+
+/* ============================================================
+   CONTACT PAGE — desktop baseline
+   ============================================================ */
+
+.cp-banner {
+  background-image: url("/bg_for%20location_PetProject.png");
+  background-size: cover;
+  background-position: top center;
+  padding: 100px 7%;
+  text-align: center;
+  position: relative;
+}
+
+.cp-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(30, 43, 58, 0.65);
+}
+
+.cp-banner-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cp-banner-inner h3 {
+  color: var(--white);
+  font-size: 36px;
+  font-family: var(--font-head);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.cp-banner-inner p {
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  line-height: 1.6;
+}
+
+.cp-locations-wrap {
+  padding: 20px 0 60px;
+}
+
+.cp-contact {
+  padding: 80px 7%;
+  background: #FEF8F0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cp-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cp-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* ============================================================
+   CONTACT PAGE — mobile overrides (≤ 600 px)
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .cp-banner {
+    padding: 60px 5%;
+  }
+
+  .cp-banner-inner h3 {
+    font-size: 24px;
+  }
+
+  .cp-banner-inner p {
+    font-size: 15px;
+  }
+
+  .cp-locations-wrap {
+    padding: 10px 0 32px;
+  }
+
+  .cp-contact {
+    grid-template-columns: 1fr;
+    padding: 48px 5%;
+    gap: 28px;
+  }
+
+  /* stack the two input columns into one */
+  .cp-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cp-form-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+}
+
+/* ============================================================
+   LENIS SMOOTH SCROLLING STYLES
+   ============================================================ */
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ============================================================
+   PARALLAX UTILITY
+   ============================================================ */
+
+.parallax-bg {
+  background-attachment: fixed !important;
+  background-position: center center !important;
+}
+
+@media (max-width: 600px) {
+  .parallax-bg {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+}

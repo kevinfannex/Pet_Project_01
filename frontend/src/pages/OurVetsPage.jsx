@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import WhyUs from '../components/WhyUs';
 
 const team = [
@@ -7,13 +8,23 @@ const team = [
 ];
 
 const OurVetsPage = () => {
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div style={{ paddingTop: '0' }}>
-      <section className="location-banner fade-up" style={{
+      <section className="location-banner fade-up parallax-bg" style={{
         backgroundImage: 'url("/bg_vet_banner_petproject.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        padding: '120px 7%',
+        padding: isMobile ? '80px 5% 60px' : '120px 7%',
         textAlign: 'center',
         position: 'relative'
       }}>
