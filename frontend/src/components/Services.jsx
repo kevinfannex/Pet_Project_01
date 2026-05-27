@@ -4,47 +4,124 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Veterinary Consultation",
-    description: "Thorough health check-ups with our experienced vets. Wellness exams, vaccinations, and preventive care tailored to your pet.",
-    color: "#FDF6EE", // var(--cream)
-    textColor: "#1E2B3A", // var(--navy)
-    icon: "🩺",
+    title: "Home Visits",
+    description: "Professional veterinary care in the warm comfort of your pet’s familiar home environment.",
+    color: "#FDF6EE",
+    textColor: "#1E2B3A",
+    img: "https://ik.imagekit.io/g4lukt2ll/Pet_Project/Home_Visit.png?updatedAt=1779874061895",
   },
   {
-    title: "Luxury Grooming",
-    description: "Breed-specific grooming, spa treatments, and blowouts by certified groomers who handle your pet like royalty.",
+    title: "General checkups",
+    description: "Thorough physical wellness examinations and preventive diagnostics to keep your pet thriving.",
     color: "#E2E8F0",
     textColor: "#1E2B3A",
+    img: "https://ik.imagekit.io/g4lukt2ll/Pet_Project/General_Checkup.png?updatedAt=1779874653697",
+  },
+  {
+    title: "Vaccinations",
+    description: "Complete core and non-core immunization schedules tailored to your pet’s lifestyle and age.",
+    color: "#D1FAE5",
+    textColor: "#14532D",
+    img: "https://ik.imagekit.io/g4lukt2ll/Pet_Project/Vaccination.png?updatedAt=1779874652360",
+  },
+  {
+    title: "Behavioral counseling",
+    description: "Compassionate guidance to resolve anxiety, aggression, house training, and social habits.",
+    color: "#F3E8FF",
+    textColor: "#6B21A8",
+    img: "https://ik.imagekit.io/g4lukt2ll/Pet_Project/behavioural_counselling.png?updatedAt=1779877484187",
+  },
+  {
+    title: "Surgery and dentistry",
+    description: "Safe surgical solutions paired with comprehensive oral health procedures for optimal hygiene.",
+    color: "#FEE2E2",
+    textColor: "#991B1B",
     icon: "✂️",
   },
   {
-    title: "Dental & Oral Care",
-    description: "Professional dental cleaning, scaling, and oral health assessments to keep your pet's teeth bright and healthy.",
-    color: "#D1FAE5",
-    textColor: "#14532D",
+    title: "Dental Care",
+    description: "Professional teeth scaling, deep cleaning, and advanced extractions for fresh breath and gums.",
+    color: "#E0F2FE",
+    textColor: "#0369A1",
     icon: "🦷",
   },
   {
-    title: "Luxury Boarding",
-    description: "Cosy, safe, home-like boarding suites with 24/7 supervision, playtime, and personalised care routines.",
-    color: "#F5C96A", // var(--mustard-light)
-    textColor: "#1E2B3A",
-    icon: "🏡",
+    title: "Spay and neuter surgeries",
+    description: "Routine, minimally-invasive spay and neuter procedures ensuring long-term health benefits.",
+    color: "#ECFDF5",
+    textColor: "#065F46",
+    icon: "🏥",
   },
   {
-    title: "Emergency Care",
-    description: "Round-the-clock emergency services with fully equipped critical care unit and experienced ER veterinarians.",
-    color: "#FEE2E2",
-    textColor: "#991B1B",
-    icon: "🚑",
-  },
-  {
-    title: "Nutrition & Diet",
-    description: "Personalised dietary plans, prescription food consultations, and nutritional counselling for every life stage.",
-    color: "#F3E8FF",
-    textColor: "#6B21A8",
+    title: "Nutrition and Diet",
+    description: "Tailored dietary plans, prescription food consultations, and weight management strategies.",
+    color: "#FFF7ED",
+    textColor: "#9A3412",
     icon: "🥗",
   },
+  {
+    title: "Pet grooming",
+    description: "Premium baths, breed-specific styling, blowouts, and nail trims for pets who love to shine.",
+    color: "#FDF2F8",
+    textColor: "#9D174D",
+    icon: "🐩",
+  },
+  {
+    title: "Tumor removals",
+    description: "Precise surgical removal of benign or malignant skin tumors, cysts, and tissue growths.",
+    color: "#FAF5FF",
+    textColor: "#581C87",
+    icon: "🔬",
+  },
+  {
+    title: "Wound repairs",
+    description: "Rapid treatment, deep cleansing, and expert suturing of lacerations, bites, and abrasions.",
+    color: "#FFF1F2",
+    textColor: "#9F1239",
+    icon: "🩹",
+  },
+  {
+    title: "Foreign body removals",
+    description: "Advanced non-surgical or surgical retrieval of swallowed items and gastrointestinal obstructions.",
+    color: "#FFFBEB",
+    textColor: "#78350F",
+    icon: "🧲",
+  },
+  {
+    title: "Orthopedic surgeries",
+    description: "Specialized bone, joint, fracture repairs, and ligament reconstructions for active lifestyles.",
+    color: "#F0FDFA",
+    textColor: "#115E59",
+    icon: "🦴",
+  },
+  {
+    title: "Soft tissue surgeries",
+    description: "Expert abdominal, thoracic, and skin surgeries addressing internal conditions and trauma.",
+    color: "#EFF6FF",
+    textColor: "#1E40AF",
+    icon: "🩹",
+  },
+  {
+    title: "Cancer surgeries",
+    description: "Comprehensive oncological surgical excisions integrated with pain management and care plans.",
+    color: "#F8FAFC",
+    textColor: "#334155",
+    icon: "🎗️",
+  },
+  {
+    title: "Cardiovascular surgeries",
+    description: "Highly specialized cardiac procedures addressing heart defects and vascular complications.",
+    color: "#FFF5F5",
+    textColor: "#C53030",
+    icon: "❤️",
+  },
+  {
+    title: "Neurological surgeries",
+    description: "Precision neurosurgical procedures for spinal disk issues, nerve trauma, and brain conditions.",
+    color: "#F5F3FF",
+    textColor: "#5B21B6",
+    icon: "🧠",
+  }
 ];
 
 export default function Services({ limit }) {
@@ -117,7 +194,15 @@ export default function Services({ limit }) {
                 justifyContent: 'center',
                 marginBottom: 20
               }}>
-                {card.icon}
+                <div style={{
+            borderRadius: 999,
+            backgroundImage: `url(${card.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: 80,
+            width: 80,
+            marginBottom: 20
+          }} />
               </div>
 
               <div>
@@ -128,22 +213,22 @@ export default function Services({ limit }) {
                   {card.description}
                 </p>
                 <div style={{ marginTop: 24 }}>
-                   <Link to={`/contact?service=${encodeURIComponent(card.title)}`} style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-                     Book Now
-                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                       <path d="M5 12h14M12 5l7 7-7 7"/>
-                     </svg>
-                   </Link>
+                  <Link to={`/contact?service=${encodeURIComponent(card.title)}`} style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
+                    Book Now
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
+
         {limit && (
-           <div style={{ textAlign: "center", marginTop: 20 }}>
-              <Link to="/services#services" className="btn-outline" style={{ background: 'var(--navy)', color: 'var(--white)', padding: '12px 24px', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold', display: 'inline-block' }}>See All Services</Link>
-           </div>
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <Link to="/services#services" className="btn-outline" style={{ background: 'var(--navy)', color: 'var(--white)', padding: '12px 24px', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold', display: 'inline-block' }}>See All Services</Link>
+          </div>
         )}
       </section>
     );
@@ -170,7 +255,7 @@ export default function Services({ limit }) {
               style={{ marginTop: 32, width: "fit-content" }}
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--mustard)" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </motion.div>
           </div>
@@ -207,7 +292,15 @@ export default function Services({ limit }) {
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                {card.icon}
+                <div style={{
+            borderRadius: 999,
+            backgroundImage: `url(${card.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: 80,
+            width: 80,
+            marginBottom: 20
+          }} />
               </div>
 
               <div>
@@ -218,21 +311,21 @@ export default function Services({ limit }) {
                   {card.description}
                 </p>
                 <div style={{ marginTop: 24 }}>
-                   <Link to={`/contact?service=${encodeURIComponent(card.title)}`} style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-                     Book Now
-                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                       <path d="M5 12h14M12 5l7 7-7 7"/>
-                     </svg>
-                   </Link>
+                  <Link to={`/contact?service=${encodeURIComponent(card.title)}`} style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
+                    Book Now
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
-          
+
           {limit && (
-             <div style={{ width: "20vw", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Link to="/services#services" className="btn-outline" style={{ background: 'var(--navy)', color: 'var(--white)', padding: '12px 24px', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold' }}>See All Services</Link>
-             </div>
+            <div style={{ width: "20vw", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Link to="/services#services" className="btn-outline" style={{ background: 'var(--navy)', color: 'var(--white)', padding: '12px 24px', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold' }}>See All Services</Link>
+            </div>
           )}
         </motion.div>
       </div>

@@ -1,60 +1,87 @@
-const Hero = () => (
-  <section className="hero">
-    <div className="doodle d1">🦴</div>
-    <div className="doodle d2">🐱</div>
-    <div className="doodle d3">❤️</div>
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Star, Heart, Activity, ShieldCheck } from 'lucide-react';
 
-    <div className="hero-text fade-up">
-      <div className="hero-badge">Bangalore's #1 Rated Pet Care</div>
-      <h1>
-        Because they deserve<br />
-        the <em>very best</em><br />
-        care &amp; love.
-      </h1>
-      <p>
-        Premium veterinary care, expert grooming, and genuine love for every furry family member.
-        Your pet's wellbeing is our life's work.
-      </p>
-      <div className="hero-btns">
-        <a href="#" className="btn-primary">📅 Book a Visit</a>
-        <a href="#services" className="btn-outline">Explore Services</a>
-      </div>
-      <div className="hero-stats">
-        <div className="hero-stat">
-          <h3>8,200<span>+</span></h3>
-          <p>Happy Pet Families</p>
-        </div>
-        <div className="hero-stat">
-          <h3>14<span>+</span></h3>
-          <p>Years of Experience</p>
-        </div>
-        <div className="hero-stat">
-          <h3>4.9<span>★</span></h3>
-          <p>Average Rating</p>
-        </div>
-      </div>
+const Hero = () => (
+  <section className="hero-editorial">
+    {/* Background Image with slow scale animation */}
+    <div className="hero-editorial-bg">
+      <div
+        className="hero-editorial-img"
+      />
+      {/* Gradients */}
+      <div className="hero-editorial-overlay-gradient"></div>
+      <div className="hero-editorial-grain"></div>
     </div>
 
-    <div className="hero-visual fade-up delay-2">
-      <div className="hero-img-blob">
-        <img
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80"
-          alt="Happy dog"
-        />
-      </div>
-      <div className="hero-pill hero-pill-1">
-        <span className="pill-emoji">🏥</span>
-        <div>
-          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 600 }}>Open Today</div>
-          <div style={{ color: '#1E2B3A', fontSize: '13px' }}>9AM – 9PM</div>
-        </div>
-      </div>
-      <div className="hero-pill hero-pill-2">
-        <span className="pill-emoji">⭐</span>
-        <div>
-          <div style={{ fontSize: '13px', color: '#1E2B3A' }}>4.9 / 5.0</div>
-          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 600 }}>2,400 Reviews</div>
-        </div>
+    {/* Content Container */}
+    <div className="hero-editorial-content">
+      <div className="hero-editorial-left">
+
+        <motion.h1
+          className="hero-editorial-title hero-title-colored"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Compassionate Care<br />For Every <span className="highlight-text">Paw & Heart</span>.
+        </motion.h1>
+
+        {/* 
+        <motion.p 
+          className="hero-editorial-desc"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          We believe every pet deserves to feel truly loved and deeply understood. Experience premium veterinary care, expert grooming, and genuine warmth for your furry family member in a boutique environment designed for their comfort and your peace of mind.
+        </motion.p>
+        */}
+
+        <motion.div
+          className="hero-editorial-actions"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <Link to="/contact#contact-form" className="hero-btn-primary">
+            Book Appointment
+          </Link>
+          <Link to="/services" className="hero-btn-secondary">
+            Explore Services <ArrowRight size={18} />
+          </Link>
+        </motion.div>
+
+        <motion.div
+          className="hero-editorial-metrics"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          <div className="metric">
+            <Heart size={20} className="metric-icon" />
+            <div>
+              <strong>8,200+</strong>
+              <span>Happy Pets Treated</span>
+            </div>
+          </div>
+          <div className="metric">
+            <Star size={20} className="metric-icon" />
+            <div>
+              <strong>14+</strong>
+              <span>Certified Vets</span>
+            </div>
+          </div>
+          <div className="metric">
+            <Activity size={20} className="metric-icon" />
+            <div>
+              <strong>24/7</strong>
+              <span>Emergency Support</span>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </div>
   </section>

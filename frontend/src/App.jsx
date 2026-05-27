@@ -8,11 +8,11 @@ import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
-import OurVetsPage from './pages/OurVetsPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import CareersPage from './pages/CareersPage';
+import LocationPage from './pages/LocationPage';
 
 function App() {
   useFadeUp();
@@ -48,11 +48,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/our-vets" element={<OurVetsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/about-us" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/locations" element={<LocationPage />} />
         </Routes>
       </main>
       <Footer />

@@ -4,7 +4,9 @@ import { NavLink, Link } from 'react-router-dom';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav>
@@ -27,8 +29,8 @@ const Header = () => {
       <ul className={`nav-links${menuOpen ? ' nav-open' : ''}`}>
         <li><NavLink to="/" onClick={closeMenu} end>Home</NavLink></li>
         <li><NavLink to="/services" onClick={closeMenu}>Services</NavLink></li>
-        <li><NavLink to="/our-vets" onClick={closeMenu}>Our Vets</NavLink></li>
-        <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
+        <li><NavLink to="/locations" onClick={closeMenu}>Location</NavLink></li>
+        <li><NavLink to="/about-us" onClick={closeMenu}>About Us</NavLink></li>
         <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
         <li className="mobile-cta-li"><Link to="/contact#contact-form" className="nav-cta" onClick={closeMenu}>Book Appointment</Link></li>
       </ul>
