@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import AboutCards from '../components/AboutCards';
 
 const AboutUsPage = () => {
   const [isMobile, setIsMobile] = useState(
@@ -231,81 +232,7 @@ const AboutUsPage = () => {
       </section>
 
       {/* ── FEATURES GRID ── */}
-      <section
-        className="fade-up"
-        style={{
-          padding: isMobile ? '60px 5%' : '90px 7%',
-          background: '#EEF5FB',
-        }}
-      >
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 50 }}>
-            <span style={{
-              display: 'inline-block',
-              fontSize: 11,
-              fontWeight: 800,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: '#B85530',
-              background: '#FDEEE6',
-              border: '1px solid #F5C4A8',
-              padding: '5px 14px',
-              borderRadius: '50px',
-              marginBottom: 14,
-            }}>What We Offer</span>
-            <h2 style={{
-              fontFamily: 'var(--font-head)',
-              fontSize: isMobile ? '26px' : '34px',
-              color: 'var(--navy)',
-              lineHeight: 1.2,
-            }}>
-              Comprehensive <span style={{ color: '#B85530' }}>Care Services</span>
-            </h2>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-            gap: 24,
-          }}>
-            {features.map((f, i) => (
-              <div
-                key={i}
-                className={`fade-up delay-${i}`}
-                style={{
-                  background: '#fff',
-                  borderRadius: 20,
-                  padding: '28px 26px',
-                  border: '1px solid rgba(30,43,58,0.05)',
-                  boxShadow: '0 6px 24px rgba(30,43,58,0.04)',
-                  transition: 'transform 0.25s, box-shadow 0.25s',
-                }}
-              >
-                <div style={{
-                  fontSize: 28,
-                  marginBottom: 14,
-                  width: 54,
-                  height: 54,
-                  background: '#FFF0E6',
-                  borderRadius: 14,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  {f.icon}
-                </div>
-                <h4 style={{
-                  fontFamily: 'var(--font-head)',
-                  fontSize: 17,
-                  color: 'var(--navy)',
-                  marginBottom: 8,
-                }}>{f.title}</h4>
-                <p style={{ color: 'var(--gray)', fontSize: 14, lineHeight: 1.7 }}>{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AboutCards />
 
       {/* ── STATS SECTION ── */}
       <section
